@@ -6,6 +6,8 @@ const userSchema = new Schema({
     name: String,
     email: String,
     avatar: String,
+    quotes: {type: Array, by: mongoose.Schema.Types.ObjectId, ref: 'Quote'},
+    lists: {type: Array, by: mongoose.Schema.Types.ObjectId, ref: 'List'},
 }, {
     timestamps: true
 });

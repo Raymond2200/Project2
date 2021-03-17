@@ -1,17 +1,9 @@
 <%-include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/nav.ejs") %>
-    <h1>test</h1>
-    <p>Welcome to Quote Central</p>
-    <a href="">SEI Student Fun Facts</a>
+    <h1>Quote of the day!</h1>
+    <h2> Author: <%= quote.a %></h2>
+    <h3> Quote: <%= quote.q %></h3>
     <ul>
-	    <li>
-	    <% if (user) { %>
-		  <a href="/logout">Log Out</a>
-	    <% } else { %>
-		  <a href="/auth/google">Login with Google</a>
-	    <% } %>
-	    </li>
     </ul>
-  </body>
-</html>
+    <%- include("./partials/footer.ejs") %>

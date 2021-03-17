@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-let indexCtrl = require('../controller/Index')
+let ranQuotesCtrl = require('../controller/ranquotes')
 
-router.get('/', indexCtrl.index)
+router.get('/', ranQuotesCtrl.indexran);
 
 router.get('/auth/google', passport.authenticate(
   'google',
@@ -21,8 +21,9 @@ router.get('/oauth2callback', passport.authenticate(
 
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/',{user: req.user});
 });
 
+router.post('/', ranQuotesCtrl.createQuote);
 
 module.exports = router;

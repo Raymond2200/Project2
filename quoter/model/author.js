@@ -1,17 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
-const quoteSchema = new Schema({
-    quote: String,
-    rating: Number
-  }, {
-    timestamps: true
-  });
-  
-  const authorSchema = new Schema({
+const authorSchema = new Schema({
     author: String,
-    quotes: [quoteSchema]
+    quotes: [{type: mongoose.Schema.Types.ObjectId, ref: 'Quote'}]
   }, {
     timestamps: true
   });

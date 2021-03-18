@@ -2,7 +2,7 @@ let User = require('../model/user')
 let fetch = require('node-fetch')
 let Temp = require('../model/temp')
 const Author = require('../model/author')
-const user = require('../model/user')
+const Quote = require('../model/quotes')
 
 module.exports={
     indexran,
@@ -20,37 +20,45 @@ async function indexran(req, res) {
 async function createQuote(req, res) {
     let arrs = Object.values(req.body)
     for ( i of arrs) {
-        console.log(i)
-        auth = await Author.findOne({author: Temp.tempQuotes[i].a})
+        console.log(Author.findOne({quotes: {quote: Temp.tempQuotes[i].q}}))
+        let auth = await Author.findOne({author: Temp.tempQuotes[i].a})
+        let using = await Quote.findOne({quote: Temp.tempQuotes[i].q})._id
+        console.log(auth)
         if (auth === null) {
             try{
-                await Author.create({
+                let newAuthor = await Author.create({
                     author: Temp.tempQuotes[i].a,
-                    quotes: {
-                        quote: Temp.tempQuotes[i].q,
-                        score: 0
-                    }
                 })
+                let newQuote = await Quote.create({
+                    quote: Temp.tempQuotes[i].q,
+                    score: 0,
+                    fakeauth: Temp.tempQuotes[i].a,
+                    author: newAuthor
+                })
+                newAuthor.quotes.push(newQuote._id)
+                await newAuthor.save()
             } catch(err) {
-                console.log(err)
                 return res.send('We seem to have encountered an issue')
             }
-            test = await Author.findOne({quotes: {quote: Temp.tempQuotes[i].q}})
+        }
+        else{
+            let test = await Quote.findOne({quote: Temp.tempQuotes[i].q}) 
             if (test === null) {
-            }
-            else {
-                let quo = {
-                    quote: TempQuotes[i].q,
-                    score: 0
+                try {
+                    await Quote.create({
+                        quote: Temp.tempQuotes[i].q,
+                        score: 0,
+                        author: auth._id
+                    })
+                } catch(err) {
+                    return res.send('We seem to have encountered an issue')
                 }
-                auth.quotes.push(quo)
-                await auth.save()
             }
         }
-        using = await Author.findOne({quotes: Temp.tempQuotes[i].a})
-        current = await User.findById(req.user._id).quotes.push(using._id)
-        current.quotes.push(using._id)
+        if (req.user.quotes.some((f) => f === using) )
+        let current = await User.findById(req.user._id)
+        current.quotes.push(using)
         await current.save()
     }
-        res.send('test')
+        res.redirect('./myquotes')
 }

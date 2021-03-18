@@ -3,6 +3,7 @@ var router = express.Router();
 const passport = require('passport');
 let ranQuotesCtrl = require('../controller/ranquotes')
 
+
 router.get('/', ranQuotesCtrl.indexran);
 
 router.get('/auth/google', passport.authenticate(

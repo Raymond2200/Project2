@@ -25,7 +25,7 @@
       </li>
       <% if (user) { %>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">My Quotes</a>
+        <a class="nav-link" href="/myquotes">My Quotes</a>
       </li>
       <% } %>
     </ul>
@@ -33,8 +33,9 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-    <<li>
-	    <% if (user) { %>
+    <li>
+      <% if (user) { %>
+      </div>
 		  <a href="/logout">Log Out</a>
 	    <% } else { %>
 		  <a href="/auth/google">Login</a>

@@ -9,7 +9,8 @@ let passport = require('passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var ranquotesRouter = require('./routes/ranquotes');
+var ranQuotesRouter = require('./routes/ranquotes');
+var myQuotesRouter = require('./routes/myquotes');
 
 let dotenv = require('dotenv')
 dotenv.config()
@@ -37,7 +38,8 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/ranquotes', ranquotesRouter);
+app.use('/ranquotes', ranQuotesRouter);
+app.use('/myquotes', myQuotesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

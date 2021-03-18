@@ -6,10 +6,11 @@ const userSchema = new Schema({
     name: String,
     email: String,
     avatar: String,
-    quotes: {type: Array, by: mongoose.Schema.Types.ObjectId, ref: 'Quote'},
-    lists: {type: Array, by: mongoose.Schema.Types.ObjectId, ref: 'List'},
+    quotes: [{type: mongoose.Schema.Types.ObjectId, ref: 'Quote'}],
+    lists: [{type: mongoose.Schema.Types.ObjectId, ref: 'List'}],
 }, {
     timestamps: true
 });
 
 module.exports = mongoose.model('User', userSchema);
+

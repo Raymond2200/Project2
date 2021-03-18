@@ -4,5 +4,3 @@ module.exports = {
     tempQuotes,
     addQuotes
 }
-
-addQuotes

@@ -1,12 +1,13 @@
 <%-include("../partials/head.ejs") %>
-<body>
-    <%- include("../partials/nav.ejs") %>
+<body style="background-color: rgba(0, 0, 0, 0.9);">
+  <%- include("../partials/nav.ejs") %>
+  <h1 class="d-flex justify-content-center text-light " style="background-color: rgba(0, 0, 0, 0.6);"><%= user.name %> Quotes</h1>  
     <% if (user) { %>
     <form method = 'POST' action = '/myquotes'>
-        <button type = 'submit'>Remove from Quotes</button>
+        <button type = 'submit' class="btn btn-dark">Remove from Quotes</button>
         <% } %>
         <div class="container-fluild">  
-          <div class="row">
+          <div class="row d-flex justify-content-center">
           <% for (i of quote) { loop++%>
             <div class="card text-center m-2" style="width: 18rem;">
               <div class="card-body">
@@ -24,6 +25,7 @@
           </div>
         </div>
         <% if (user) { %>
+        <button type = 'submit' class="btn btn-dark">Remove from Quotes</button>
       </form>
       <% } %>
 <%- include("../partials/footer.ejs") %>

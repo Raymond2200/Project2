@@ -1,15 +1,20 @@
 <%-include("./partials/head.ejs") %>
-<body>
+<body >
     <%- include("./partials/nav.ejs") %>
-    <form method="POST" action="/addnew">
-        <div class="form-group">
-          <label>Author</label>
-          <input class="form-control" name="a">
-        </div>
-        <div class="form-group">
-            <label>Quote</label>
-            <textarea class="form-control" rows="3" name="q"></textarea>
+    <div style="background-size: cover;" id="adding">
+      <h1 class="d-flex justify-content-center text-light " style="background-color: rgba(0, 0, 0, 0.6);"> New Quote!</h1>
+      <form method="POST" action="/addnew" class="m-5  ">
+          <div class="form-group">
+            <label class=" text-light bg-dark p-2 rounded">Author</label>
+            <input class="form-control" name="a">
           </div>
-        <button type="submit">Add New Quote</button>
-    </form>
+          <div class="form-group">
+              <label class=" text-light bg-dark p-2 rounded">Quote</label>
+              <textarea class="form-control" rows="3" name="q"></textarea>
+            </div>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-dark" type="submit" >Add New Quote</button>
+          </div>
+      </form>
+    </div>
     <%- include("./partials/footer.ejs") %>

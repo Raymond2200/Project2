@@ -1,8 +1,7 @@
 let User = require('../model/user')
 let fetch = require('node-fetch')
 let Temp = require('../model/temp')
-const Author = require('../model/author')
-const user = require('../model/user')
+
 
 module.exports={
     quoIndex,
@@ -23,8 +22,11 @@ async function quoIndex(req, res) {
 async function quoRemove(req, res) {
     let arrs = Object.values(req.body)
     for (i of arrs) {
-        let mark = User.findById(req.user._id)
-        await mark.remove({quotes: Temp.currentList[i]})
+        let quote = Temp.currentList[i]
+        test = req.user.id
+        let mark = await User.findById(test)
+        await mark.quotes.remove(quote._id)
+        await mark.save()
     }
     res.redirect('/myquotes')
 }

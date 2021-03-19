@@ -26,5 +26,7 @@ router.get('/logout', function(req, res){
 
 router.post('/search',  indexCtrl.search)
 
+router.post('/addsearch', indexCtrl.addSearch)
+
 
 module.exports = router;

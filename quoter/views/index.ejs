@@ -1,10 +1,16 @@
 <%-include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/nav.ejs") %>
-    <h1>Quote of the day!</h1>
-    <h2> Author: <%= quote.a %></h2>
-    <h3> Quote: <%= quote.q %></h3>
-    <h5> Log in for more features!</h5>
-    <ul>
-    </ul>
-    <%- include("./partials/footer.ejs") %>
+    <div id="intro" class="bg-image shadow-2-strong">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+          <div class="container d-flex align-items-center justify-content-center text-center h-100">
+            <div class="text-white">
+              <h1 class="mb-3">Quote of the day!</h1>
+              <h4 class="mb-4">Author: <%= quote.a %> </h4>
+              <h5 class="mb-4">Quote: <%= quote.q %></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    <h5 class="m-3 text-center"> Log in for more features!</h5>
+<%- include("./partials/footer.ejs") %>

@@ -20,8 +20,8 @@
       </li>
       <% } %>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search by author" aria-label="Search">
+    <form class="form-inline my-2 my-lg-0" method="POST" action="/search">
+      <input autocomplete="off" name="search" class="form-control mr-sm-2" type="search" placeholder="Search by author" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <li>

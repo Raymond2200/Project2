@@ -1,0 +1,31 @@
+<%-include("./partials/head.ejs") %>
+<body class= "m-auto">
+  <%- include("./partials/nav.ejs") %>  
+  <% if (user) { %>
+  <form method = 'POST' action = '/ranquotes' class="text-center">
+    <button type = 'submit'>Add</button>
+    </select>
+    <% } %>
+    <div class="container-fluild">  
+      <div class="row">
+      <% for (i of quote) { loop++%>
+        <div class="card text-center m-2" style="width: 18rem;">
+          <div class="card-body">
+            <% if (user) { %>
+            <input type='checkbox' name ="<%= loop %>" value="<%= loop %>" >
+            <% } %>
+              <h5 class="card-title"><%= i.fakeauth %></h5>
+              <p class="card-text"><%= i.quote %></p>
+            <% if (user) { %>
+            </input>
+            <% } %>
+          </div>
+        </div>
+      <% } %>
+      </div>
+    </div>
+    <% if (user) { %>
+    <button type = 'submit'>Add</button>
+  </form>
+  <% } %>
+<%- include("./partials/footer.ejs") %>

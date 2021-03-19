@@ -1,8 +1,10 @@
 let User = require('../model/user')
 let fetch = require('node-fetch')
+const Quote = require('../model/quotes')
 
 module.exports = {
     index,
+    search,
 }
 
 async function index(req, res, next) {
@@ -24,3 +26,9 @@ async function index(req, res, next) {
   });
 }
 
+async function search(req,res) {
+  let incoming = req.body.search
+  let found = await Quote.fuzzySearch(incoming);
+  loop=-1
+  res.render('show', {user: req.user, quote: found })
+}

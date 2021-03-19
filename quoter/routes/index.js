@@ -24,5 +24,7 @@ router.get('/logout', function(req, res){
   res.redirect('/');
 });
 
+router.post('/search',  indexCtrl.search)
+
 
 module.exports = router;

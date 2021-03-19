@@ -24,7 +24,7 @@ Project is created with:
 * Mongoose fuzzy searching
 
 ## Website link
-Comming soon :)
+[heroku push](https://secret-river-35567.herokuapp.com/)
 
 
 ## Future Features

@@ -8,11 +8,11 @@
     <ul class="navbar-nav mr-auto">
       <% if (user) { %>
       <li class="nav-item">
-        <a class="nav-link" href="/newquote">New Quote?</a>
+        <a class="nav-link" href="/addnew">New Quote?</a>
       </li>
       <% } %>
       <li class="nav-item">
-        <a class="nav-link" href="/ranquotes">Random</a>
+        <a class="nav-link" href="/ranquotes">Random Quotes</a>
       </li>
       <% if (user) { %>
       <li class="nav-item">
@@ -21,7 +21,7 @@
       <% } %>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search by author" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <li>

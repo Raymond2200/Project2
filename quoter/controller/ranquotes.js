@@ -20,10 +20,7 @@ async function indexran(req, res) {
 async function createQuote(req, res) {
     let arrs = Object.values(req.body)
     for ( i of arrs) {
-        console.log(Author.findOne({quotes: {quote: Temp.tempQuotes[i].q}}))
         let auth = await Author.findOne({author: Temp.tempQuotes[i].a})
-        let using = await Quote.findOne({quote: Temp.tempQuotes[i].q})._id
-        console.log(auth)
         if (auth === null) {
             try{
                 let newAuthor = await Author.create({
@@ -55,10 +52,13 @@ async function createQuote(req, res) {
                 }
             }
         }
-        if (req.user.quotes.some((f) => f === using) )
-        let current = await User.findById(req.user._id)
-        current.quotes.push(using)
-        await current.save()
+        let using = await Quote.findOne({quote: Temp.tempQuotes[i].q})
+        if (req.user.quotes.some((f) => f === using)){}
+        else{
+            current = await User.findById(req.user._id)
+            current.quotes.push(using._id)
+            await current.save()
+        }
     }
         res.redirect('./myquotes')
 }

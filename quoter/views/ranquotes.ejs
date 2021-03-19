@@ -2,8 +2,9 @@
 <body>
   <%- include("./partials/nav.ejs") %>  
   <% if (user) { %>
-  <form method = 'POST' action = '/ranquotes'>
-    <button type = 'submit'>Submit</button>
+  <form method = 'POST' action = '/ranquotes' class="text-center">
+    <button type = 'submit'>Add</button>
+    </select>
     <% } %>
     <div class="container-fluild">  
       <div class="row">
@@ -24,6 +25,7 @@
       </div>
     </div>
     <% if (user) { %>
+    <button type = 'submit'>Add</button>
   </form>
   <% } %>
 <%- include("./partials/footer.ejs") %>

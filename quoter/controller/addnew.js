@@ -1,0 +1,5 @@
+let User = require('../model/user')
+let fetch = require('node-fetch')
+let Temp = require('../model/temp')
+const Author = require('../model/author')
+const Quote = require('../model/quotes')

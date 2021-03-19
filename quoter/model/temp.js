@@ -1,6 +1,6 @@
 let tempQuotes = []
-let addQuotes = []
+let currentList = []
 module.exports = {
     tempQuotes,
-    addQuotes
+    currentList
 }

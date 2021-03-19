@@ -1,9 +1,9 @@
 <%-include("../partials/head.ejs") %>
-<body class = "text-center">
+<body>
     <%- include("../partials/nav.ejs") %>
     <% if (user) { %>
-    <form method = 'POST' action = '/ranquotes'>
-        <button type = 'submit'>Remove from Favorites</button>
+    <form method = 'POST' action = '/myquotes'>
+        <button type = 'submit'>Remove from Quotes</button>
         <% } %>
         <div class="container-fluild">  
           <div class="row">

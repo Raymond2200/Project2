@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var ranQuotesRouter = require('./routes/ranquotes');
 var myQuotesRouter = require('./routes/myquotes');
+var addNewRouter = require("./routes/addNew")
 
 let dotenv = require('dotenv')
 dotenv.config()
@@ -40,6 +41,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/ranquotes', ranQuotesRouter);
 app.use('/myquotes', myQuotesRouter);
+app.use('/addnew', addNewRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

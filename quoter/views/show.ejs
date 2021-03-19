@@ -1,11 +1,21 @@
 <%-include("./partials/head.ejs") %>
+<<<<<<< HEAD
 <body class= "m-auto " style="background-color: rgba(0, 0, 0, 0.9);">
+=======
+<body class= "justify-content-center" style="background-color: rgba(0, 0, 0, 0.9);">
+>>>>>>> 12de2d1b856e0247bb8f9d36ec76cef9835d23f7
   <%- include("./partials/nav.ejs") %>  
   <% if (user) { %>
     <h1 class="d-flex justify-content-center text-light " style="background-color: rgba(0, 0, 0, 0.6);"> Search Results</h1>
     <form method = 'POST' action = '/ranquotes' class="text-center">
+<<<<<<< HEAD
     <button type = 'submit' class="btn btn-dark mx-auto">Add To My Quotes</button>
     </select>
+=======
+      <div class="text-center">
+        <button type = 'submit' class="btn btn-dark">Add To My Quotes</button>
+      </div>
+>>>>>>> 12de2d1b856e0247bb8f9d36ec76cef9835d23f7
     <% } %>
     <div class="container-fluild">  
       <div class="row d-flex justify-content-center">
@@ -26,7 +36,14 @@
       </div>
     </div>
     <% if (user) { %>
+<<<<<<< HEAD
     <button type = 'submit' class="btn btn-dark">Add To My Quotes</button>
   </form class=" pb-2">
+=======
+    <div class="text-center">
+      <button type = 'submit' class="btn btn-dark">Add To My Quotes</button>
+    </div>
+  </form>
+>>>>>>> 12de2d1b856e0247bb8f9d36ec76cef9835d23f7
   <% } %>
 <%- include("./partials/footer.ejs") %>

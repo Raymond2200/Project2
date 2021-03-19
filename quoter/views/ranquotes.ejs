@@ -1,11 +1,17 @@
 <%-include("./partials/head.ejs") %>
-<body style="background-color: rgba(0, 0, 0, 0.9);">
+<body  style="background-color: rgba(0, 0, 0, 0.9);">
   <%- include("./partials/nav.ejs") %>  
   <h1 class="d-flex justify-content-center text-light " style="background-color: rgba(0, 0, 0, 0.6);"> Random Quotes</h1>
   <% if (user) { %>
   <form method = 'POST' action = '/ranquotes' >
+<<<<<<< HEAD
     <button type = 'submit' class="btn btn-dark mx-auto">Add To My Quotes</button>
     </select>
+=======
+    <div class="text-center">
+      <button type = 'submit' class="btn btn-dark">Add To My Quotes</button>
+    </div>
+>>>>>>> 12de2d1b856e0247bb8f9d36ec76cef9835d23f7
     <% } %>
     <div class="container-fluild">  
       <div class="row d-flex justify-content-center">
@@ -26,7 +32,9 @@
       </div>
     </div>
     <% if (user) { %>
-    <button type = 'submit' class="btn btn-dark">Add To My Quotes</button>
+      <div class="text-center">
+        <button type = 'submit' class="btn btn-dark">Add To My Quotes</button>
+      </div>
   </form>
   <% } %>
 <%- include("./partials/footer.ejs") %>

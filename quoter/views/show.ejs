@@ -1,10 +1,10 @@
 <%-include("./partials/head.ejs") %>
-<body class= "m-auto" style="background-color: rgba(0, 0, 0, 0.9);">
+<body class= "m-auto " style="background-color: rgba(0, 0, 0, 0.9);">
   <%- include("./partials/nav.ejs") %>  
   <% if (user) { %>
     <h1 class="d-flex justify-content-center text-light " style="background-color: rgba(0, 0, 0, 0.6);"> Search Results</h1>
     <form method = 'POST' action = '/ranquotes' class="text-center">
-    <button type = 'submit' class="btn btn-dark">Add To My Quotes</button>
+    <button type = 'submit' class="btn btn-dark mx-auto">Add To My Quotes</button>
     </select>
     <% } %>
     <div class="container-fluild">  
@@ -27,6 +27,6 @@
     </div>
     <% if (user) { %>
     <button type = 'submit' class="btn btn-dark">Add To My Quotes</button>
-  </form>
+  </form class=" pb-2">
   <% } %>
 <%- include("./partials/footer.ejs") %>

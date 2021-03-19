@@ -3,10 +3,6 @@ let fetch = require('node-fetch')
 let Temp = require('../model/temp')
 const Author = require('../model/author')
 const user = require('../model/user')
-<<<<<<< HEAD
-=======
-
->>>>>>> 12de2d1b856e0247bb8f9d36ec76cef9835d23f7
 
 module.exports={
     quoIndex,

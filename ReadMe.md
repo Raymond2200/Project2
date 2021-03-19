@@ -11,7 +11,8 @@ We are an organization of 1 strong looking to bring happiness, or pain? Anyways,
 ![myquotes](https://github.com/Raymond2200/Project2/blob/master/pictures/my%20quotes.PNG)
 
 
-
+## Technologies
+* [Used Library](https://zenquotes.io/) 
 
 
 ## Technologies
@@ -22,12 +23,11 @@ Project is created with:
 * Oauth2
 * Mongoose fuzzy searching
 
-## website link
-https://pages.git.generalassemb.ly/raymond2200/SuperWar/
+## Website link
+Comming soon :)
 
 
 ## Future Features
-
 * Lists to catogarize quotes into.
 * alllow for more than 1 user at a time.
 * Fix remove button

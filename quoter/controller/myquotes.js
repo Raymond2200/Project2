@@ -3,7 +3,7 @@ let fetch = require('node-fetch')
 let Temp = require('../model/temp')
 const Author = require('../model/author')
 const user = require('../model/user')
-const List = require('../model/lists')
+
 
 module.exports={
     quoIndex,
